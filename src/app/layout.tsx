@@ -4,6 +4,7 @@ import "./globals.css";
 import { CartDataProvider } from "@/context/useCartDataContext";
 import Header from "@/components/Header";
 import CartBox from "@/components/CartBox";
+import Footer from "@/components/Footer";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
             <CartBox />
           </div>
         </CartDataProvider>
+        <Footer></Footer>
       </body>
     </html>
   );
