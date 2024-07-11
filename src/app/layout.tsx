@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { CartDataProvider } from "@/context/useCartDataContext";
 import Header from "@/components/Header";
+import CartBox from "@/components/CartBox";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           <div className="flex-1">
             <Header></Header>
             {children}
+            <CartBox />
           </div>
         </CartDataProvider>
       </body>
