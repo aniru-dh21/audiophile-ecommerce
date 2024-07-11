@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { CartDataProvider } from "@/context/useCartDataContext";
+import Header from "@/components/Header";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -21,7 +22,10 @@ export default function RootLayout({
         className={`${manrope.className} text-base text-primary-color min-h-svh flex flex-col`}
       >
         <CartDataProvider>
-          <div className="flex-1">{children}</div>
+          <div className="flex-1">
+            <Header></Header>
+            {children}
+          </div>
         </CartDataProvider>
       </body>
     </html>
