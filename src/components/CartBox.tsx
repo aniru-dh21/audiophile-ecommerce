@@ -1,9 +1,9 @@
 "use client";
-
-import { useCartData } from "@/context/useCartDataContext";
+import React, { useEffect, useMemo, useState } from "react";
 import ToolBar from "./ToolBar";
-import CartElement from "./CartElement";
 import Link from "next/link";
+import { useCartData } from "@/context/useCartDataContext";
+import CartElement from "./CartElement";
 
 export default function CartBox() {
   const { isCartBoxShow, cartData, total, dispatch, toggleCartBox } =
@@ -13,7 +13,9 @@ export default function CartBox() {
   };
   return (
     <div
-      className={`min-h-svh w-full fixed top-0 left-0 bg-[rgba(0,0,0,0.5)] $(isCartBoxShow ? '' : 'hidden')`}
+      className={`min-h-svh w-full fixed top-0 left-0 bg-[rgba(0,0,0,0.5)] ${
+        isCartBoxShow ? "" : "hidden"
+      }`}
     >
       <ToolBar />
       <div className="container p-6 md:px-10 mx-auto relative md:flex md:justify-end">
@@ -23,7 +25,7 @@ export default function CartBox() {
               Cart({cartData.length})
             </div>
             <div
-              className="underline text-secondary-color cursor-pointer"
+              className=" underline text-secondary-color cursor-pointer"
               onClickCapture={clearCart}
             >
               Remove all

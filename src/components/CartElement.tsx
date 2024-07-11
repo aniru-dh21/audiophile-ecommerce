@@ -1,10 +1,8 @@
 "use client";
-
-import { useCartData } from "@/context/useCartDataContext";
-import { CartItem } from "@/lib/type";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { useEffect } from "react";
-
+import { CartItem } from "@/lib/type";
+import { useCartData } from "@/context/useCartDataContext";
 export default function CartElement({ itemData }: { itemData: CartItem }) {
   const { dispatch } = useCartData();
 
@@ -17,11 +15,9 @@ export default function CartElement({ itemData }: { itemData: CartItem }) {
   const plusQuantity = () => {
     dispatch({ type: "PLUS_ITEM_QUANTITY", payload: itemData.productId });
   };
-
   const minusQuantity = () => {
     dispatch({ type: "MINUX_ITEM_QUANTITY", payload: itemData.productId });
   };
-
   return (
     <li className="flex gap-3 items-center">
       <div className="max-w-16 rounded-md overflow-hidden">
